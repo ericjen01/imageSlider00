@@ -1,13 +1,12 @@
-const carouselSlide = document.querySelector(".carousel-slide");
-const carouselImages = document.querySelectorAll(".carousel-slide img");
-console.log(carouselImages);
+const slide = document.querySelector(".slide");
+const images = document.querySelectorAll(".slide img");
 
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
 
 let counter = 1;
-console.log(carouselImages.length);
-const size = carouselImages[counter].clientWidth;
+console.log(images.length);
+const size = images[counter].clientWidth;
 moveSlides(counter);
 
 nextBtn.addEventListener("click", () => {
@@ -15,7 +14,7 @@ nextBtn.addEventListener("click", () => {
   counter++;
   console.log(counter);
   moveSlides(counter);
-  if (counter >= carouselImages.length - 1) {
+  if (counter >= images.length - 1) {
     endReset();
   }
 });
@@ -33,7 +32,7 @@ function endReset() {
   setTransition("0.001s");
   counter = 0;
   moveSlides(counter);
-  carouselSlide.addEventListener("webkitTransitionEnd", () => {
+  slide.addEventListener("webkitTransitionEnd", () => {
     if (counter == 0) {
       setTransition("0.5s");
       counter++;
@@ -44,10 +43,10 @@ function endReset() {
 
 function frontReset() {
   setTransition("0.001s");
-  counter = carouselImages.length - 1;
+  counter = images.length - 1;
   moveSlides(counter);
-  carouselSlide.addEventListener("webkitTransitionEnd", () => {
-    if (counter == carouselImages.length - 1) {
+  slide.addEventListener("webkitTransitionEnd", () => {
+    if (counter == images.length - 1) {
       setTransition("0.5s");
       counter--;
       moveSlides(counter);
@@ -56,9 +55,9 @@ function frontReset() {
 }
 
 function setTransition(timeSpan) {
-  carouselSlide.style.transition = "transform " + timeSpan + " ease-in-out";
+  slide.style.transition = "transform " + timeSpan + " ease-in-out";
 }
 
 function moveSlides(counter) {
-  carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+  slide.style.transform = "translateX(" + -size * counter + "px)";
 }

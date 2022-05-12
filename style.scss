@@ -4,16 +4,28 @@
   box-sizing: border-box;
 }
 
-.carousel-container {
+.container {
   width: 60%;
   margin: auto;
-  height: auto;
   background: #222;
-
   border: solid 10px #222;
-  .carousel-slide {
-    display: flex;
-    width: 100%;
+  .viewPort {
+    margin: auto;
+    width: 1200px;
     height: 800px;
+    border: solid 10px rgb(182, 102, 236);
+    overflow: hidden;
+    .slide {
+      display: flex;
+      width: 1200px;
+      height: 800px;
+      margin: auto;
+      img {
+        background-size: cover;
+        background-position: center;
+        width: 1200px;
+        height: 800px;
+      }
+    }
   }
 }
