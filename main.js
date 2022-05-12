@@ -28,6 +28,19 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
+autoPlay();
+
+function autoPlay() {
+  setTransition("0.5s");
+  counter++;
+  console.log(counter);
+  moveSlides(counter);
+  if (counter >= images.length - 1) {
+    endReset();
+  }
+  setTimeout(autoPlay, 5000);
+}
+
 function endReset() {
   setTransition("0.001s");
   counter = 0;
