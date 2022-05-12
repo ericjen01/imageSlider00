@@ -10,6 +10,31 @@
   margin: auto;
   background: #222;
   border: solid 10px #222;
+  position: relative;
+}
+
+.container #prevBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  left: 5%;
+  font-size: 60px;
+  color: rgba(248, 252, 252, 0.5);
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container #nextBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  right: 5%;
+  font-size: 60px;
+  color: rgba(248, 252, 252, 0.5);
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .container .viewPort {
